@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" %>
+
+<%@ Register Assembly="nilnul.web._css_.WEB._CTR_" Namespace="nilnul.web._css_.WEB._CTR_.style_" TagPrefix="cc1" %>
+
+
+<%@ Register Assembly="nilnul.web._js_.WEB._CTR_" Namespace="nilnul.web._js_.WEB._CTR_.scripts_" TagPrefix="cc2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<cc1:style__Default ID="Style__Default1" runat="server" />	<cc2:scripts__JqPolyNn runat="server"></cc2:scripts__JqPolyNn>
+
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+	</asp:ContentPlaceHolder>
+
+	<script>
+		nilnul.print.number( document.body, 1 );
+		//number figures
+		var container = document.body;
+		var figures = container.getElementsByTagName( "figure" );
+		for ( var i = 0; i < figures.length; i++ ) {
+			var figLabel = "图" + ( i + 1 ).toString();
+			figures[i].getElementsByTagName( "figcaption" )[0].firstChild.insertData( 0, figLabel + "  " );
+			figures[i].label = figLabel;
+
+			$( figures[i] ).css( "text-align", "center" );
+		}
+
+		var tables = container.getElementsByTagName( "table" );
+		for ( var i = 0; i < tables.length; i++ ) {
+			var tableLabel = "表" + ( i + 1 ).toString();
+			tables[i].getElementsByTagName( "caption" )[0].firstChild.insertData( 0, tableLabel + "  " );
+			tables[i].label = tableLabel;
+			$( tables[i] ).css( "text-align", "center" );
+			$( tables[i] ).css( "margin-left", "auto" );
+			$( tables[i] ).css( "margin-right", "auto" );
+
+		}
+
+
+
+
+		//	var refs = $(container).find("[data-fig-id]");
+
+
+		//for (var j = 0; j < refs.length; j++) {
+		//	refs[j].textContent = "图"+ document.getElementById(refs[j].dataset["figId"]).figId.toString();
+		//}
+		//var refs = container.getElementsByClassName("nilnul-fig-cite");
+
+		//for (var j = 0; j < refs.length; j++) {
+		//	refs[j].textContent = "图"+ document.getElementById(refs[j].getAttribute("href").substr(1)).figId.toString();
+		//}
+
+
+		var refs = Array.prototype.slice.call( container.getElementsByTagName( "a" ) ).filter( function ( e, i, a ) {
+			return ( ( e.getAttribute( "href" ) || "" ).toString() + " " )[0] === "#" && (
+				e.children.length === 0 || ( e.children.length === 1 || e.textContent === "" )
+
+			);
+		} );
+
+
+
+		for ( var j = 0; j < refs.length; j++ ) {
+			refs[j].textContent = document.getElementById( refs[j].getAttribute( "href" ).substr( 1 ) ).label.toString();
+		}
+
+
+
+
+	</script>
+</body>
+</html>

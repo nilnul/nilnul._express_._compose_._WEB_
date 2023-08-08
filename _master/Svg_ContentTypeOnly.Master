@@ -1,0 +1,4 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"  %>
+<%@ Register Assembly="nilnul._web_._CTR_" Namespace="nilnul._web_._CTR_" TagPrefix="cc1" %>
+<cc1:ContentTypeSvg2 ID="ContentTypeSvg2" runat="server" />
+<asp:ContentPlaceHolder runat="server" ID="svg"></asp:ContentPlaceHolder>

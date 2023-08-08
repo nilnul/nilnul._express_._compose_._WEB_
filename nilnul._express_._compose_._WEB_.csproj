@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A4379E47-0560-4B46-B383-C48120D1B5DE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>nilnul._express_._compose_._WEB_</RootNamespace>
+    <AssemblyName>nilnul._express_._compose_._WEB_</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44393</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AE.Net.Mail, Version=1.7.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AE.Net.Mail.1.7.10.0\lib\net45\AE.Net.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip, Version=1.16.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetZip.1.16.0\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\WEB.CTR._DEMO_(Git\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nilnul.collection_._discrete_._LIB_, Version=1.0.7691.20929, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul.collection_._discrete_._LIB_.1.0.7691.20929\lib\net48\nilnul.collection_._discrete_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.num._integer_._LIB_, Version=1.0.7707.25781, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul.num._integer_._LIB_.1.0.7707.25781\lib\net48\nilnul.num._integer_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.num._quotient_._LIB_, Version=1.0.7691.21009, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul.num._quotient_._LIB_.1.0.7691.21009\lib\net48\nilnul.num._quotient_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.num._real_._LIB_, Version=2.0.7798.38019, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul.num._real_._LIB_.2.0.7798.38019\lib\net48\nilnul.num._real_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.web._ascxRender_._LIB_, Version=1.0.7310.41436, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul.web._ascxRender_._LIB_.1.0.7310.41436\lib\net472\nilnul.web._ascxRender_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.web._css_.WEB._CTR_, Version=1.0.7720.42511, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul.web._css_.WEB._CTR_.1.0.7720.42511\lib\net48\nilnul.web._css_.WEB._CTR_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.web._ctr_.WEB._CTR_, Version=1.0.7714.18186, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul.web._ctr_.WEB._CTR_.1.0.7714.18186\lib\net48\nilnul.web._ctr_.WEB._CTR_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.web._js_.WEB._CTR_, Version=1.0.7714.17983, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul.web._js_.WEB._CTR_.1.0.7714.17983\lib\net48\nilnul.web._js_.WEB._CTR_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._acc_._LIB_, Version=2.0.7737.33740, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._acc_._LIB_.2.0.7737.33740\lib\net48\nilnul._acc_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._acc_._LINQ_, Version=1.0.7737.33735, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._acc_._LINQ_.1.0.7737.33735\lib\net48\nilnul._acc_._LINQ_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._app_._LIB_, Version=1.0.7695.40132, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._app_._LIB_.1.0.7695.40132\lib\net48\nilnul._app_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._bit_._LIB_, Version=1.0.7691.1810, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._bit_._LIB_.1.0.7691.1810\lib\net48\nilnul._bit_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._character_._LIB_, Version=2.1.7795.1269, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._character_._LIB_.2.1.7795.1269\lib\net48\nilnul._character_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._comm_._LIB_, Version=1.0.7457.22850, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._comm_._LIB_.1.0.7457.22850\lib\net472\nilnul._comm_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._fs_._LIB_, Version=2.0.7797.36243, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._fs_._LIB_.2.0.7797.36243\lib\net48\nilnul._fs_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._human_._LIB_, Version=1.0.7671.40651, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._human_._LIB_.1.0.7671.40651\lib\net48\nilnul._human_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._human_._LINQ_, Version=1.0.7671.40640, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._human_._LINQ_.1.0.7671.40640\lib\net48\nilnul._human_._LINQ_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._lang_._LIB_, Version=1.0.7735.40608, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._lang_._LIB_.1.0.7735.40608\lib\net48\nilnul._lang_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._ling_._LIB_, Version=1.0.7079.29589, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._ling_._LIB_.1.0.7079.29589\lib\net46\nilnul._ling_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._linq_._LIB_, Version=1.0.7711.30287, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._linq_._LIB_.1.0.7711.30287\lib\net48\nilnul._linq_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._num_._LIB_, Version=1.0.7771.32303, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._num_._LIB_.1.0.7771.32303\lib\net48\nilnul._num_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._num_._LINQ_, Version=1.0.7771.27496, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._num_._LINQ_.1.0.7771.27496\lib\net48\nilnul._num_._LINQ_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._obj_._LIB_, Version=1.0.7798.38889, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._obj_._LIB_.1.0.7798.38889\lib\net48\nilnul._obj_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._rel_._LIB_, Version=1.0.7777.41611, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._rel_._LIB_.1.0.7777.41611\lib\net48\nilnul._rel_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._set_._LIB_, Version=1.0.7720.3704, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._set_._LIB_.1.0.7720.3704\lib\net48\nilnul._set_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._time_._LIB_, Version=1.0.7781.31474, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._time_._LIB_.1.0.7781.31474\lib\net48\nilnul._time_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._txt_._LIB_, Version=1.0.7795.1471, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._txt_._LIB_.1.0.7795.1471\lib\net48\nilnul._txt_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._web_._CTR_, Version=1.0.7673.1781, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._web_._CTR_.1.0.7673.1781\lib\net48\nilnul._web_._CTR_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._web_._LIB_, Version=1.0.7800.37686, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._web_._LIB_.1.0.7800.37686\lib\net48\nilnul._web_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._win_._LIB_, Version=1.0.7797.33950, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._win_._LIB_.1.0.7797.33950\lib\net48\nilnul._win_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._xml_._LIB_, Version=1.0.7781.36722, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\nilnul._xml_._LIB_.1.0.7781.36722\lib\net48\nilnul._xml_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\WEB.CTR._DEMO_(Git\packages\System.Configuration.ConfigurationManager.7.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\WEB.CTR._DEMO_(Git\packages\System.Security.Permissions.7.0.0\lib\net462\System.Security.Permissions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Cors.5.2.9\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Cors.5.2.9\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <!--<Reference Include="_nilnul_._CFG_, Version=1.0.7691.1040, Culture=neutral, processorArchitecture=MSIL" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <HintPath>packages\_nilnul_._CFG_.1.0.7691.1040\lib\net48\_nilnul_._CFG_.dll</HintPath>
+</Reference>-->
+    <Reference Include="_nilnul_._LIB_, Version=1.0.7790.32500, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\_nilnul_._LIB_.1.0.7790.32500\lib\net48\_nilnul_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="_nilnul_._LINQ_, Version=1.0.8033.32300, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>packages\_nilnul_._LINQ_.1.0.8033.32300\lib\net48\_nilnul_._LINQ_.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="article\Lorry.ascx" />
+    <Content Include="article\_fmt\Js.ascx" />
+    <Content Include="article\_lorry\Js.ascx" />
+    <Content Include="Default.aspx" />
+    <Content Include="eg_\Article.ascx" />
+    <Content Include="eg_\article\Decored.ascx" />
+    <Content Include="eg_\article\_decored_\Acknowledge.ascx" />
+    <Content Include="eg_\article\_decored_\Index.ascx" />
+    <Content Include="eg_\article\_decored_\Digest.ascx" />
+    <Content Include="eg_\article\_decored_\Appendix.ascx" />
+    <Content Include="eg_\article\_decored_\Toc.ascx" />
+    <Content Include="eg_\article\_decored_\Preface.ascx" />
+    <Content Include="eg_\article\_decored_\Back.ascx" />
+    <Content Include="eg_\article\_decored_\Cover.ascx" />
+    <Content Include="eg_\UserManual.ascx" />
+    <Content Include="eg_\userManual\Page.aspx" />
+    <Content Include="eg_\_article_\Bibliography.ascx" />
+    <Content Include="eg_\_article_\Address.ascx" />
+    <Content Include="eg_\_article_\_torso_\Sects.ascx" />
+    <Content Include="eg_\_article_\_torso_\Prolog.ascx" />
+    <Content Include="eg_\_article_\_torso_\sect_\Conclude.ascx" />
+    <Content Include="eg_\_article_\_torso_\sect_\Intro.ascx" />
+    <Content Include="eg_\_article_\_torso_\sect_\_intro_\_torso_\Prolog.ascx" />
+    <Content Include="eg_\_article_\_torso_\sect_\_intro_\_torso_\Sects.ascx" />
+    <Content Include="eg_\_article_\Title.ascx" />
+    <Content Include="eg_\_article_\Torso.ascx" />
+    <Content Include="eg_\_article_\_torso_\sect_\_intro_\Title.ascx" />
+    <Content Include="eg_\_article_\_torso_\sect_\_intro_\Torso.ascx" />
+    <Content Include="eg_\_userManual_\Cover.ascx" />
+    <Content Include="eg_\_userManual_\Installation.ascx" />
+    <Content Include="eg_\_userManual_\Intro.ascx" />
+    <Content Include="eg_\_userManual_\Use.ascx" />
+    <Content Include="eg_\_userManual_\_installation_\Content.ascx" />
+    <Content Include="eg_\_userManual_\_installation_\p\WebForm1.aspx" />
+    <Content Include="eg_\_userManual_\_use_\Cfg.ascx" />
+    <Content Include="eg_\_userManual_\_use_\CheckIn.ascx" />
+    <Content Include="eg_\_userManual_\_use_\Datastore.ascx" />
+    <Content Include="eg_\_userManual_\_use_\Help.ascx" />
+    <Content Include="eg_\_userManual_\_use_\Layout.ascx" />
+    <Content Include="eg_\_userManual_\_use_\MainForm.ascx" />
+    <Content Include="eg_\_userManual_\_use_\Simulation.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_cfg_\Amend.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_cfg_\Data.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_cfg_\FirstTimeRun.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_cfg_\Run.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_cfg_\_amend_\fig\Panel.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_cfg_\_amend_\panel.png" />
+    <Content Include="eg_\_userManual_\_use_\_checkIn_\img.png" />
+    <Content Include="eg_\_userManual_\_use_\_checkIn_\img\Fig.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\Ammo.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\Material.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\Target.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_ammo_\Browse.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_ammo_\browse.png" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_ammo_\browse\Fig.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_ammo_\browse\_detail_\img.png" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_ammo_\browse\_detail_\img\Fig.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_ammo_\Create.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_ammo_\_create_\screen.png" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_ammo_\_create_\screen\Fig.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_material_\Browse.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_material_\Create.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_material_\_browse_\detail.png" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_material_\_browse_\detail\Fig.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_material_\_browse_\screen.png" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_material_\_browse_\screen\Fig.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_material_\_create_\screen.png" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_material_\_create_\screen\Fig.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_target_\Browse.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_target_\Create.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_target_\_browse_\detail.png" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_target_\_browse_\detail\Fig.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_target_\_browse_\screen.png" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_target_\_browse_\screen\Fig.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_target_\_create_\byMenu.png" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_target_\_create_\byMenu\Fig.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_target_\_create_\panel.png" />
+    <Content Include="eg_\_userManual_\_use_\_datastore_\_target_\_create_\panel\Fig.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_help_\explanation.png" />
+    <Content Include="eg_\_userManual_\_use_\_help_\fig\Explanation.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_help_\fig\Menu.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_help_\menu.png" />
+    <Content Include="eg_\_userManual_\_use_\_layout_\fig\Menu.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_layout_\menu.png" />
+    <Content Include="eg_\_userManual_\_use_\_mainForm_\fig\MainForm.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_mainForm_\mainForm.png" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\Create.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\menu.png" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\menu\Fig.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\ResultUpload.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\SimuRun.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\ViewResult.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_create_\fig\FolderContent.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_create_\fig\Panel.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_create_\fig\PanelSelected.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_create_\fig\SaveFinished.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_create_\fig\SaveTo.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_create_\fig\WarnNonEmpty.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_create_\folderContent.png" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_create_\panel.png" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_create_\panelSelected.png" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_create_\saveFinished.png" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_create_\saveTo.png" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_create_\warnNonEmpty.png" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_resultUpload_\fig\Panel.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_resultUpload_\panel.png" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_simuRun_\fig\LsdynaRun.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_simuRun_\fig\Panel.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_simuRun_\lsdynaRun.png" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_simuRun_\Panel.png" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_viewResult_\fig\Panel.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_viewResult_\fig\nilnul3d.ascx" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_viewResult_\panel.png" />
+    <Content Include="eg_\_userManual_\_use_\_simulation_\_viewResult_\nilnul3d.png" />
+    <Content Include="Global.asax" />
+    <Content Include="loader\_linkContainer\ToBeLoaded2.ascx" />
+    <Content Include="loader\_linkContainer\ToBeLoaded1.ascx" />
+    <Content Include="Loader1.aspx" />
+    <Content Include="Loader.aspx" />
+    <Content Include="loader\LinkContainer.aspx" />
+    <Content Include="loader\_linkContainer\ToBeLoaded.ascx" />
+    <Content Include="loader_\Headed.aspx" />
+    <Content Include="loader_\Titled.aspx" />
+    <Content Include="loader_\_headed\Js.ascx" />
+    <Content Include="loader_\_titled\Js.ascx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="article\Lorry.ascx.cs">
+      <DependentUpon>Lorry.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="article\Lorry.ascx.designer.cs">
+      <DependentUpon>Lorry.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="article\_lorry\Js.ascx.cs">
+      <DependentUpon>Js.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="article\_lorry\Js.ascx.designer.cs">
+      <DependentUpon>Js.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="article\_lorry\_js\Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="eg_\_userManual_\_installation_\p\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eg_\_userManual_\_installation_\p\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="loader_\_headed\Js.ascx.cs">
+      <DependentUpon>Js.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loader_\_headed\Js.ascx.designer.cs">
+      <DependentUpon>Js.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="loader_\_titled\Js.ascx.cs">
+      <DependentUpon>Js.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loader_\_titled\Js.ascx.designer.cs">
+      <DependentUpon>Js.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\settings\Url.cs" />
+    <Compile Include="_loader\_refer\Js.ascx.cs">
+      <DependentUpon>Js.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_loader\_refer\Js.ascx.designer.cs">
+      <DependentUpon>Js.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_loader\Refer.ascx.cs">
+      <DependentUpon>Refer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_loader\Refer.ascx.designer.cs">
+      <DependentUpon>Refer.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="loader\_linkContainer\Web.config" />
+    <None Include="loader\_linkContainer\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="loader\_linkContainer\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Readme.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="_all\Js.ascx" />
+    <Content Include="_all\js\Typed.aspx" />
+    <Content Include="_all\js\typed\ScriptSrc.ascx" />
+    <Content Include="_loader\_refer\Js.ascx" />
+    <Content Include="_loader\Refer.ascx" />
+    <Content Include="_master\FullArmed.Master" />
+    <Content Include="_master\HtmlPlain.Master" />
+    <Content Include="_master\Svg.Master" />
+    <Content Include="_master\SvgWithBackAspect.Master" />
+    <Content Include="_master\SvgWithBackground.Master" />
+    <Content Include="_master\Svg_ContentTypeOnly.Master" />
+    <Content Include="_master\Loader.Master" />
+    <Content Include="_master\TypeCss.Master" />
+    <Content Include="_master\TypeJs.Master" />
+    <Content Include="_all\js\typed\Web.config" />
+    <None Include="_all\js\typed\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="_all\js\typed\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="_loader\Master.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="eg_\userManual\aspx\" />
+    <Folder Include="eg_\_article_\_torso_\sect_\_intro_\_torso_\sect_\" />
+    <Folder Include="loader_\_titled_\" />
+    <Folder Include="_all\_js_\" />
+    <Folder Include="_article_\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="article\_lorry\_js\Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev2nuget|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Symbol|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56681</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12345/app_/nilnul._express_._compose_</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:12345/app_/nilnul._express_._compose_</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <!--<Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />-->
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
